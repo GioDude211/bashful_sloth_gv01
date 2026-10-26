@@ -1,5 +1,5 @@
 from db_create import db_create
-from flask import Flask
+from flask import Flask, jsonify
 from db_queries import query_by_name, query_by_number, query_moves_by_type, query_pokemon_by_type
 
 app = Flask(__name__)
@@ -22,7 +22,7 @@ moves_by_type</pre>"""
 def show_pokemonInfoByName(name):
     cursor = db_create()
     try:
-        return query_by_name(cursor, name)
+        return jsonify(query_by_name(cursor, name))
     finally:
         cursor.close()
 
@@ -30,7 +30,7 @@ def show_pokemonInfoByName(name):
 def show_pokemonInfoByNumber(number):
     cursor = db_create()
     try:
-        return query_by_number(cursor, number)
+        return jsonify(query_by_number(cursor, number))
     finally:
         cursor.close()
 
@@ -38,7 +38,7 @@ def show_pokemonInfoByNumber(number):
 def show_movesByType(type):
     cursor = db_create()
     try:
-        return query_moves_by_type(cursor, type)
+        return jsonify(query_moves_by_type(cursor, type))
     finally:
         cursor.close()
 
