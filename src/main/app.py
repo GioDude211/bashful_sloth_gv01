@@ -3,6 +3,7 @@ from flask import Flask, jsonify
 from db_queries import query_by_name, query_by_number, query_moves_by_type, query_pokemon_by_type
 
 app = Flask(__name__)
+app.json.sort_keys = False
 
 @app.route("/")
 def home():
@@ -46,7 +47,7 @@ def show_movesByType(type):
 def show_pokemonByType(type):
     cursor = db_create()
     try:
-        return query_pokemon_by_type(cursor, type)
+        return jsonify(query_pokemon_by_type(cursor, type))
     finally:
         cursor.close()
 
