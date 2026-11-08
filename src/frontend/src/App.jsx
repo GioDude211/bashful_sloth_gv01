@@ -4,6 +4,8 @@ import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import './App.css'
 
+//This file can be adjusted whenever. This is just a template.
+
 function App() {
   const [count, setCount] = useState(0)
 
