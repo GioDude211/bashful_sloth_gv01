@@ -1,12 +1,10 @@
-import React from 'react';
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import './index.css'
+import App from './App.jsx'
 
-function App() {
-  return (
-    <div style={{ padding: '2rem', fontFamily: 'sans-serif' }}>
-      <h1>⚡ My PokéDex</h1>
-      <p>My React frontend is up and running!</p>
-    </div>
-  );
-}
-
-export default App;
+createRoot(document.getElementById('root')).render(
+  <StrictMode>
+    <App />
+  </StrictMode>,
+)
