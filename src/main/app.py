@@ -5,6 +5,15 @@ from db_queries import query_by_name, query_by_number, query_moves_by_type, quer
 app = Flask(__name__)
 app.json.sort_keys = False
 
+#To run this file you will need to use the virtual enviornment and make sure
+#the correct dependencies are installed (ex. flask) 
+#Use the commands below:
+# .\.venv\Scripts\Activate.ps1
+# python -m pip install flask flask-cors
+# python -m pip show flask
+# Then run the file
+#from the terminal (powershell) using "python .\src\main\app.py"
+
 @app.route("/")
 def home():
     return """<pre>Welcome to the Pokedex API Project
