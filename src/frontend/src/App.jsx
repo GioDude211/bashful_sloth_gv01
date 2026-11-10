@@ -5,6 +5,7 @@ import viteLogo from './assets/vite.svg'
 import './App.css'
 
 //This file can be adjusted whenever. This is just a template.
+//To run this file : npm run dev
 
 function App() {
   const [count, setCount] = useState(0)
